@@ -117,44 +117,44 @@ function App() {
     switch (role) {
       case 'center':
         return {
-          transform: `translateX(-50%) scale(${isMobile ? 1.08 : 1.42})`,
+          transform: 'translateX(-50%)',
           filter: 'blur(0px)',
           opacity: 1,
           zIndex: 20,
           left: '50%',
-          height: isMobile ? '58%' : '86%',
-          bottom: isMobile ? '18%' : '2%',
+          height: isMobile ? '44%' : '72%',
+          bottom: isMobile ? '20%' : '4%',
         };
       case 'left':
         return {
-          transform: 'translateX(-50%) scale(1)',
+          transform: 'translateX(-50%)',
           filter: 'blur(2px)',
           opacity: 0.78,
           zIndex: 10,
-          left: isMobile ? '18%' : '29%',
-          height: isMobile ? '18%' : '29%',
-          bottom: isMobile ? '28%' : '13%',
+          left: isMobile ? '24%' : '32%',
+          height: isMobile ? '14%' : '24%',
+          bottom: isMobile ? '30%' : '16%',
         };
       case 'right':
         return {
-          transform: 'translateX(-50%) scale(1)',
+          transform: 'translateX(-50%)',
           filter: 'blur(2px)',
           opacity: 0.78,
           zIndex: 10,
-          left: isMobile ? '82%' : '71%',
-          height: isMobile ? '18%' : '29%',
-          bottom: isMobile ? '28%' : '13%',
+          left: isMobile ? '76%' : '68%',
+          height: isMobile ? '14%' : '24%',
+          bottom: isMobile ? '30%' : '16%',
         };
       case 'back':
       default:
         return {
-          transform: 'translateX(-50%) scale(1)',
+          transform: 'translateX(-50%)',
           filter: 'blur(4px)',
           opacity: 0.92,
           zIndex: 5,
           left: '50%',
-          height: isMobile ? '15%' : '23%',
-          bottom: isMobile ? '29%' : '13%',
+          height: isMobile ? '11%' : '19%',
+          bottom: isMobile ? '31%' : '16%',
         };
     }
   };
@@ -220,9 +220,9 @@ function App() {
             return (
               <div
                 key={image.src}
-                className="absolute"
+                className="absolute overflow-visible"
                 style={{
-                  aspectRatio: '0.72 / 1',
+                  aspectRatio: '1 / 1',
                   transition: [
                     `transform ${TRANSITION}`,
                     `filter ${TRANSITION}`,
