@@ -3,8 +3,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 import erbaPura from './assets/perfumes/erba_pura.png';
 import invictusVictoryElixir from './assets/perfumes/invictus_victory_elixir.png';
+import leMaleLeParfum from './assets/perfumes/le_male_le_parfum.png';
 import oneMillionElixir from './assets/perfumes/one_million_elixir.png';
-import santal33 from './assets/perfumes/santal_33.png';
 
 const IMAGES = [
   {
@@ -32,12 +32,12 @@ const IMAGES = [
     description: 'Dark trophy silhouette with a dense, powerful presence made for the hero frame.',
   },
   {
-    src: santal33,
-    name: 'Santal 33',
-    accent: 'Le Labo',
-    bg: '#7B6148',
-    panel: '#A7896B',
-    description: 'A clean apothecary silhouette with warm wood character and a softer luxury profile.',
+    src: leMaleLeParfum,
+    name: 'Le Male Le Parfum',
+    accent: 'Jean Paul Gaultier',
+    bg: '#7A5A2B',
+    panel: '#C9A35D',
+    description: 'The black-and-gold torso bottle with stronger contrast, sharper presence, and a richer hero look.',
   },
 ] as const;
 
@@ -249,6 +249,7 @@ function App() {
                   alt={image.name}
                   draggable={false}
                   className="relative h-full w-full select-none object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.28)]"
+                  style={{ filter: image.name === 'Le Male Le Parfum' ? 'drop-shadow(0 0 28px rgba(255,225,160,0.22)) drop-shadow(0 28px 50px rgba(0,0,0,0.34))' : undefined }}
                 />
               </div>
             );

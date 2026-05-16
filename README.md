@@ -24,7 +24,7 @@ Hero full-viewport construido con React + TypeScript + Vite + Tailwind CSS + luc
 - One Million Elixir
 - Erba Pura
 - Invictus Victory Elixir
-- Santal 33
+- Le Male Le Parfum
 
 ## Estructura principal
 
