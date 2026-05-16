@@ -326,7 +326,7 @@ function App() {
             textTransform: 'uppercase',
           }}
         >
-          <span>DESCUBRILO</span>
+          <span>DESCUBRIR</span>
           <ArrowRight className="h-5 w-5 sm:h-8 sm:w-8" strokeWidth={2.25} />
         </a>
       </div>
