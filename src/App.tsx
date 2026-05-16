@@ -196,7 +196,7 @@ function App() {
             whiteSpace: 'nowrap',
           }}
         >
-          ELIXIR DROP
+          ELIXIR PARFUM'S
         </div>
 
         <div
