@@ -192,7 +192,7 @@ function App() {
             opacity: 1,
             lineHeight: 1,
             textTransform: 'uppercase',
-            letterSpacing: '-0.02em',
+            letterSpacing: '0.04em',
             whiteSpace: 'nowrap',
           }}
         >
@@ -304,7 +304,7 @@ function App() {
             fontSize: 'clamp(20px, 4vw, 56px)',
             fontWeight: 400,
             opacity: 0.95,
-            letterSpacing: '-0.02em',
+            letterSpacing: '0.04em',
             lineHeight: 1,
             textTransform: 'uppercase',
           }}
