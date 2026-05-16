@@ -1,10 +1,10 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
-import creedAventus from './assets/perfumes/creed_aventus.png';
 import erbaPura from './assets/perfumes/erba_pura.png';
 import invictusVictoryElixir from './assets/perfumes/invictus_victory_elixir.png';
 import oneMillionElixir from './assets/perfumes/one_million_elixir.png';
+import santal33 from './assets/perfumes/santal_33.png';
 
 const IMAGES = [
   {
@@ -32,12 +32,12 @@ const IMAGES = [
     description: 'Dark trophy silhouette with a dense, powerful presence made for the hero frame.',
   },
   {
-    src: creedAventus,
-    name: 'Creed Aventus',
-    accent: 'Creed',
-    bg: '#2D2B2A',
-    panel: '#5A5653',
-    description: 'The iconic monochrome bottle, sharp and clean, with timeless signature character.',
+    src: santal33,
+    name: 'Santal 33',
+    accent: 'Le Labo',
+    bg: '#7B6148',
+    panel: '#A7896B',
+    description: 'A clean apothecary silhouette with warm wood character and a softer luxury profile.',
   },
 ] as const;
 
