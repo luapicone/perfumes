@@ -13,7 +13,7 @@ const IMAGES = [
     accent: 'Rabanne',
     bg: '#9C6314',
     panel: '#C7932E',
-    description: 'Golden amber intensity with a sculptural bottle that owns the spotlight.',
+    description: 'Ámbar dulce, vainilla y maderas cálidas.',
   },
   {
     src: erbaPura,
@@ -21,7 +21,7 @@ const IMAGES = [
     accent: 'Xerjoff',
     bg: '#1967A8',
     panel: '#4A92CF',
-    description: 'Blue velvet energy, bright citrus aura, and a bottle built to feel luxurious.',
+    description: 'Cítrico frutal, almizclado y muy fresco.',
   },
   {
     src: invictusVictoryElixir,
@@ -29,7 +29,7 @@ const IMAGES = [
     accent: 'Rabanne',
     bg: '#10264D',
     panel: '#2B4777',
-    description: 'Dark trophy silhouette with a dense, powerful presence made for the hero frame.',
+    description: 'Vainilla oscura, especias y fondo ambarado.',
   },
   {
     src: leMaleLeParfum,
@@ -37,7 +37,7 @@ const IMAGES = [
     accent: 'Jean Paul Gaultier',
     bg: '#7A5A2B',
     panel: '#C9A35D',
-    description: 'The black-and-gold torso bottle with stronger contrast, sharper presence, and a richer hero look.',
+    description: 'Cardamomo, lavanda y vainilla oriental.',
   },
 ] as const;
 
