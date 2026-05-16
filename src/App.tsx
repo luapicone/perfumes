@@ -196,7 +196,7 @@ function App() {
             whiteSpace: 'nowrap',
           }}
         >
-          ELIXIR PARFUM'S
+          SCENTTO
         </div>
 
         <div
