@@ -1,5 +1,6 @@
 node_modules/
 dist/
+tmp_assets/
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts

@@ -1,26 +1,43 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
+import creedAventus from './assets/perfumes/creed_aventus.png';
+import erbaPura from './assets/perfumes/erba_pura.png';
+import invictusVictoryElixir from './assets/perfumes/invictus_victory_elixir.png';
+import oneMillionElixir from './assets/perfumes/one_million_elixir.png';
+
 const IMAGES = [
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/1.02464a56.png',
-    bg: '#F4845F',
-    panel: '#F79B7F',
+    src: oneMillionElixir,
+    name: 'One Million Elixir',
+    accent: 'Rabanne',
+    bg: '#9C6314',
+    panel: '#C7932E',
+    description: 'Golden amber intensity with a sculptural bottle that owns the spotlight.',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/2.b977faab.png',
-    bg: '#6BBF7A',
-    panel: '#85CC92',
+    src: erbaPura,
+    name: 'Erba Pura',
+    accent: 'Xerjoff',
+    bg: '#1967A8',
+    panel: '#4A92CF',
+    description: 'Blue velvet energy, bright citrus aura, and a bottle built to feel luxurious.',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/3.4df853b4.png',
-    bg: '#E882B4',
-    panel: '#ED9DC4',
+    src: invictusVictoryElixir,
+    name: 'Invictus Victory Elixir',
+    accent: 'Rabanne',
+    bg: '#10264D',
+    panel: '#2B4777',
+    description: 'Dark trophy silhouette with a dense, powerful presence made for the hero frame.',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/4.4457fbce.png',
-    bg: '#6EB5FF',
-    panel: '#8DC4FF',
+    src: creedAventus,
+    name: 'Creed Aventus',
+    accent: 'Creed',
+    bg: '#2D2B2A',
+    panel: '#5A5653',
+    description: 'The iconic monochrome bottle, sharp and clean, with timeless signature character.',
   },
 ] as const;
 
@@ -68,6 +85,8 @@ function App() {
     return () => window.clearTimeout(timeout);
   }, [isAnimating]);
 
+  const activePerfume = IMAGES[activeIndex];
+
   const roles = useMemo(
     () => ({
       center: activeIndex,
@@ -98,44 +117,44 @@ function App() {
     switch (role) {
       case 'center':
         return {
-          transform: `translateX(-50%) scale(${isMobile ? 1.25 : 1.68})`,
+          transform: `translateX(-50%) scale(${isMobile ? 1.08 : 1.42})`,
           filter: 'blur(0px)',
           opacity: 1,
           zIndex: 20,
           left: '50%',
-          height: isMobile ? '60%' : '92%',
-          bottom: isMobile ? '22%' : '0',
+          height: isMobile ? '58%' : '86%',
+          bottom: isMobile ? '18%' : '2%',
         };
       case 'left':
         return {
           transform: 'translateX(-50%) scale(1)',
           filter: 'blur(2px)',
-          opacity: 0.85,
+          opacity: 0.78,
           zIndex: 10,
-          left: isMobile ? '20%' : '30%',
-          height: isMobile ? '16%' : '28%',
-          bottom: isMobile ? '32%' : '12%',
+          left: isMobile ? '18%' : '29%',
+          height: isMobile ? '18%' : '29%',
+          bottom: isMobile ? '28%' : '13%',
         };
       case 'right':
         return {
           transform: 'translateX(-50%) scale(1)',
           filter: 'blur(2px)',
-          opacity: 0.85,
+          opacity: 0.78,
           zIndex: 10,
-          left: isMobile ? '80%' : '70%',
-          height: isMobile ? '16%' : '28%',
-          bottom: isMobile ? '32%' : '12%',
+          left: isMobile ? '82%' : '71%',
+          height: isMobile ? '18%' : '29%',
+          bottom: isMobile ? '28%' : '13%',
         };
       case 'back':
       default:
         return {
           transform: 'translateX(-50%) scale(1)',
           filter: 'blur(4px)',
-          opacity: 1,
+          opacity: 0.92,
           zIndex: 5,
           left: '50%',
-          height: isMobile ? '13%' : '22%',
-          bottom: isMobile ? '32%' : '12%',
+          height: isMobile ? '15%' : '23%',
+          bottom: isMobile ? '29%' : '13%',
         };
     }
   };
@@ -144,7 +163,7 @@ function App() {
     <div
       className="relative w-full overflow-hidden"
       style={{
-        backgroundColor: IMAGES[activeIndex].bg,
+        backgroundColor: activePerfume.bg,
         transition: `background-color ${TRANSITION}`,
         fontFamily: 'Inter, sans-serif',
       }}
@@ -177,14 +196,20 @@ function App() {
             whiteSpace: 'nowrap',
           }}
         >
-          3D SHAPE
+          ELIXIR DROP
         </div>
 
         <div
           className="absolute left-4 top-6 text-xs font-semibold uppercase text-white sm:left-8"
           style={{ zIndex: 60, opacity: 0.9, letterSpacing: '0.18em' }}
         >
-          TOONHUB
+          PERFUME GALLERY
+        </div>
+
+        <div className="pointer-events-none absolute inset-x-0 top-[11%] flex justify-center" style={{ zIndex: 10 }}>
+          <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/85 backdrop-blur-sm sm:text-xs">
+            Premium Selection
+          </div>
         </div>
 
         <div className="absolute inset-0" style={{ zIndex: 3 }}>
@@ -197,7 +222,7 @@ function App() {
                 key={image.src}
                 className="absolute"
                 style={{
-                  aspectRatio: '0.6 / 1',
+                  aspectRatio: '0.72 / 1',
                   transition: [
                     `transform ${TRANSITION}`,
                     `filter ${TRANSITION}`,
@@ -211,18 +236,19 @@ function App() {
                 }}
               >
                 <div
-                  className="absolute inset-[6%] rounded-[32px]"
+                  className="absolute inset-x-[14%] bottom-[6%] top-[16%] rounded-[40px]"
                   style={{
-                    backgroundColor: image.panel,
-                    opacity: role === 'center' ? 0.2 : role === 'back' ? 0.08 : 0.12,
-                    filter: role === 'center' ? 'blur(0px)' : 'blur(1px)',
+                    background: `linear-gradient(180deg, ${image.panel}66 0%, ${image.panel}0F 100%)`,
+                    opacity: role === 'center' ? 0.7 : role === 'back' ? 0.18 : 0.32,
+                    filter: role === 'center' ? 'blur(18px)' : 'blur(12px)',
+                    transform: 'translateY(5%)',
                   }}
                 />
                 <img
                   src={image.src}
-                  alt={`TOONHUB figurine ${index + 1}`}
+                  alt={image.name}
                   draggable={false}
-                  className="relative h-full w-full select-none object-contain object-bottom"
+                  className="relative h-full w-full select-none object-contain object-bottom drop-shadow-[0_28px_50px_rgba(0,0,0,0.28)]"
                 />
               </div>
             );
@@ -230,27 +256,26 @@ function App() {
         </div>
 
         <div
-          className="absolute bottom-6 left-4 max-w-[320px] sm:bottom-20 sm:left-24"
+          className="absolute bottom-6 left-4 max-w-[340px] sm:bottom-20 sm:left-24"
           style={{ zIndex: 60 }}
         >
-          <p
-            className="mb-2 text-base font-bold uppercase text-white sm:mb-3 sm:text-[22px]"
-            style={{ opacity: 0.95, letterSpacing: '0.02em' }}
-          >
-            TOONHUB FIGURINES
+          <p className="mb-2 text-[11px] font-semibold uppercase text-white/80 sm:mb-3 sm:text-sm" style={{ letterSpacing: '0.24em' }}>
+            {activePerfume.accent}
           </p>
           <p
-            className="mb-4 hidden text-xs text-white opacity-85 sm:mb-5 sm:block sm:text-sm"
-            style={{ opacity: 0.85, lineHeight: 1.6 }}
+            className="mb-2 text-2xl font-bold uppercase text-white sm:mb-3 sm:text-[34px]"
+            style={{ opacity: 0.98, letterSpacing: '-0.02em', lineHeight: 0.95 }}
           >
-            The artwork is stunning, shipped fully prepared. The finish is a vision, the 3D craft is flawless.
-            Many thanks! Wishing you the win. Order now.
+            {activePerfume.name}
+          </p>
+          <p className="mb-4 hidden text-xs text-white/85 sm:mb-5 sm:block sm:text-sm" style={{ lineHeight: 1.7 }}>
+            {activePerfume.description}
           </p>
 
           <div className="flex items-center gap-3 sm:gap-4">
             <button
               type="button"
-              aria-label="Previous figurine"
+              aria-label="Previous perfume"
               onClick={() => navigate('prev')}
               className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition duration-150 hover:scale-[1.08] hover:bg-white/10 sm:h-16 sm:w-16"
               style={{ backgroundColor: 'transparent' }}
@@ -259,7 +284,7 @@ function App() {
             </button>
             <button
               type="button"
-              aria-label="Next figurine"
+              aria-label="Next perfume"
               onClick={() => navigate('next')}
               className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition duration-150 hover:scale-[1.08] hover:bg-white/10 sm:h-16 sm:w-16"
               style={{ backgroundColor: 'transparent' }}
