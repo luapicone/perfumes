@@ -225,7 +225,7 @@ function App() {
 
         <div className="pointer-events-none absolute inset-x-0 top-[11%] flex justify-center" style={{ zIndex: 10 }}>
           <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/85 backdrop-blur-sm sm:text-xs">
-            Premium Selection
+            Selección premium
           </div>
         </div>
 
@@ -326,7 +326,7 @@ function App() {
             textTransform: 'uppercase',
           }}
         >
-          <span>DISCOVER IT</span>
+          <span>DESCUBRILO</span>
           <ArrowRight className="h-5 w-5 sm:h-8 sm:w-8" strokeWidth={2.25} />
         </a>
       </div>
