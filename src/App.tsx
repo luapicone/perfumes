@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import erbaPura from './assets/perfumes/erba_pura.png';
 import invictusVictoryElixir from './assets/perfumes/invictus_victory_elixir.png';
@@ -58,6 +58,7 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 640);
+  const isAnimatingRef = useRef(false);
 
   useEffect(() => {
     IMAGES.forEach(({ src }) => {
@@ -74,6 +75,8 @@ function App() {
   }, []);
 
   useEffect(() => {
+    isAnimatingRef.current = isAnimating;
+
     if (!isAnimating) {
       return undefined;
     }
@@ -84,6 +87,20 @@ function App() {
 
     return () => window.clearTimeout(timeout);
   }, [isAnimating]);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      if (isAnimatingRef.current) {
+        return;
+      }
+
+      isAnimatingRef.current = true;
+      setIsAnimating(true);
+      setActiveIndex((prev) => (prev + 1) % 4);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   const activePerfume = IMAGES[activeIndex];
 
