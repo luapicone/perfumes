@@ -186,7 +186,7 @@ function App() {
             zIndex: 2,
             top: '18%',
             fontFamily: 'Anton, sans-serif',
-            fontSize: 'clamp(72px, 20vw, 280px)',
+            fontSize: 'clamp(64px, 18vw, 240px)',
             fontWeight: 900,
             color: '#fff',
             opacity: 1,
